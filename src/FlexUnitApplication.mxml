@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- This is an auto generated file and is not intended for modification. -->
+
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml"
+				xmlns:flexui="flexunit.flexui.*"
+				minWidth="955" minHeight="600" creationComplete="onCreationComplete()"
+				layout="absolute">
+	<mx:Script>
+		<![CDATA[
+			import flexUnitTests.MyAppTest;
+			import flexUnitTests.MyAppTestSuite;
+			
+			public function currentRunTestSuite():Array
+			{
+				var testsToRun:Array = new Array();
+				testsToRun.push(flexUnitTests.MyAppTestSuite);
+				testsToRun.push(flexUnitTests.MyAppTest);
+				return testsToRun;
+			}
+			
+			
+			private function onCreationComplete():void
+			{
+				testRunner.runWithFlexUnit4Runner(currentRunTestSuite(), "MyApp");
+			}
+			
+		]]>
+	</mx:Script>
+	<flexui:FlexUnitTestRunnerUI id="testRunner" portNumber="8765">
+	</flexui:FlexUnitTestRunnerUI>
+	
+</mx:Application>
